@@ -8,10 +8,10 @@ resource "azurerm_storage_account" "this" {
   account_replication_type      = var.replication_type
   public_network_access_enabled = true # Disable public access
   min_tls_version               = "TLS1_2" #todo check
-  #identity {
-    #type         = "UserAssigned"
-    #identity_ids = [var.user_assigned_identity_id]
-  #}
+  identity {
+    type         = "UserAssigned"
+    identity_ids = [var.user_assigned_identity_id]
+  }
 
   network_rules {
     default_action             = "Deny"  # Blocks all traffic unless explicitly allowed
