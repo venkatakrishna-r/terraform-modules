@@ -49,15 +49,15 @@ variable "user_assigned_identity_id" {
    default     = []
  }
 
-variable "private_link_subnet_id" {
-  description = "Subnet ID for Private Link"
-  type        = string
-}
+#variable "private_link_subnet_id" {
+#  description = "Subnet ID for Private Link"
+#  type        = string
+#}
 
-variable "private_dns_zone_ids" {
-  description = "List of Private DNS Zone IDs"
-  type        = list(string)
-}
+#variable "private_dns_zone_ids" {
+#  description = "List of Private DNS Zone IDs"
+#  type        = list(string)
+#}
 
 variable "adls_storage_account_id" {
   description = "Storage Account ID for ADLS diagnostic logs destination"
