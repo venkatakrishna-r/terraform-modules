@@ -32,9 +32,3 @@ resource "azurerm_storage_container" "this" {
   container_access_type = "private"
   depends_on            = [azurerm_storage_account.this]
 }
-
-resource "azurerm_role_assignment" "tf_service_principal_role" {
-  scope                = azurerm_storage_account.this.id
-  role_definition_name = "Storage Blob Data Contributor"
-  principal_id         = data.azurerm_client_config.current.object_id
-}
