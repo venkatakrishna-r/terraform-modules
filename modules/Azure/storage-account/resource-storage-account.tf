@@ -30,5 +30,7 @@ resource "azurerm_storage_container" "this" {
   name                  = each.value
   storage_account_name  = azurerm_storage_account.this.name
   container_access_type = "private"
-  depends_on            = [azurerm_storage_account.this]
+  depends_on            = [azurerm_storage_account.this,
+                           azurerm_role_assignment.this
+                          ]
 }
