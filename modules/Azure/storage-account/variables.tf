@@ -31,33 +31,33 @@ variable "storage_container_names" {
   description = "List of storage container names to create"
 }
 
-variable "user_assigned_identity_id" {
-  type        = string
-  description = "User Assigned Managed Identity ID"
-  default     = null
-}
+#variable "user_assigned_identity_id" {
+#  type        = string
+#  description = "User Assigned Managed Identity ID"
+#  default     = null
+#}
 
- variable "allowed_subnet_ids" {   # For service endpoint connection
-   description = "List of subnet IDs allowed to access the storage account"  
-   type        = list(string)
-   default     = []
- }
- 
- variable "allowed_subnet_depends_on" {    # For service endpoint connection
-   description = "List of resources the storage account should depend on (typically a subnet data or resource block)."
-   type        = list(any)
-   default     = []
- }
-
-variable "private_link_subnet_id" {
-  description = "Subnet ID for Private Link"
-  type        = string
-}
-
-variable "private_dns_zone_ids" {
-  description = "List of Private DNS Zone IDs"
+variable "allowed_subnet_ids" {   # For service endpoint connection
+  description = "List of subnet IDs allowed to access the storage account"  
   type        = list(string)
+  default     = []
 }
+ 
+variable "allowed_subnet_depends_on" {    # For service endpoint connection
+  description = "List of resources the storage account should depend on (typically a subnet data or resource block)."
+  type        = list(any)
+  default     = []
+}
+
+#variable "private_link_subnet_id" {
+#  description = "Subnet ID for Private Link"
+#  type        = string
+#}
+
+#variable "private_dns_zone_ids" {
+#  description = "List of Private DNS Zone IDs"
+#  type        = list(string)
+#}
 
 variable "adls_storage_account_id" {
   description = "Storage Account ID for ADLS diagnostic logs destination"
